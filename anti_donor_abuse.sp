@@ -9,8 +9,8 @@
 #define SOUND_SAPPER_NOISE "weapons/sapper_timer.wav"
 #define SOUND_SAPPER_PLANT "weapons/sapper_plant.wav"
 
-#define DEBUG
-#define DEBUG_CVAR
+//#define DEBUG
+//#define DEBUG_CVAR
 
 /*
  * Convars
