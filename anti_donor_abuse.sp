@@ -51,7 +51,7 @@ public Plugin myinfo =
     name        = "[TF2] Anti Donor Abuse",
     description = "Prevents donors from abusing their powers",
     author      = "Banshee, Sreaper, Malifox",
-    version     = "2.0.0",
+    version     = "2.0.1",
     url         = "https://FirePowered.org"
 };
 
@@ -304,10 +304,10 @@ bool IsClientResized(int client) {
  * @param ... Variable number of format parameters
  */
 void LogDebug(const char[] format, any...) {
+#if defined DEBUG
     char buffer[512];
     VFormat(buffer, sizeof(buffer), format, 2);
     PrintToServer("[ANTI DONOR ABUSE] - %s", buffer);
-#if defined DEBUG
     char path[PLATFORM_MAX_PATH];
     BuildPath(Path_SM, path, sizeof(path), "logs/debug.anti_donor_abuse.log");
     LogToFile(path, buffer);
@@ -321,10 +321,10 @@ void LogDebug(const char[] format, any...) {
  * @param ... Variable number of format parameters
  */
 void LogCvar(const char[] format, any...) {
+#if defined DEBUG_CVAR
     char buffer[512];
     VFormat(buffer, sizeof(buffer), format, 2);
     PrintToServer("[ANTI DONOR ABUSE] - %s", buffer);
-#if defined DEBUG_CVAR
     char path[PLATFORM_MAX_PATH];
     BuildPath(Path_SM, path, sizeof(path), "logs/debug.anti_donor_abuse.log");
     LogToFile(path, buffer);
